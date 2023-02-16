@@ -1,0 +1,73 @@
+{"characters":[{
+	"name": "Jean-Luc Picard",
+	"rank": "Captain",
+	"species": "Human",
+	"description": "The captain of the USS Enterprise-D who is respected and admired by his crew for his leadership, intellect and diplomacy.",
+	"episodes": 178
+}, {
+	"name": "William Riker",
+	"rank": "Commander",
+	"species": "Human",
+	"description": "The first officer of the USS Enterprise-D who is known for his charm, confidence and skill as a commander.",
+	"episodes": 176
+}, {
+	"name": "Data",
+	"rank": "Lieutenant Commander",
+	"species": "Android",
+	"description": "An android officer on the USS Enterprise-D who is curious about human behavior and strives to become more human-like.",
+	"episodes": 175
+}, {
+	"name": "Geordi La Forge",
+	"rank": "Lieutenant Commander",
+	"species": "Human",
+	"description": "The chief engineer of the USS Enterprise-D who is blind and uses a special visor that allows him to see the electromagnetic spectrum.",
+	"episodes": 176
+}, {
+	"name": "Deanna Troi",
+	"rank": "Lieutenant Commander",
+	"species": "Half-Betazoid, Half-Human",
+	"description": "The ship's counselor on the USS Enterprise-D who possesses empathic and telepathic abilities.",
+	"episodes": 174
+}, {
+	"name": "Worf",
+	"rank": "Lieutenant Commander",
+	"species": "Klingon",
+	"description": "A Klingon officer on the USS Enterprise-D who struggles to balance his loyalty to his Klingon heritage and his duty to Starfleet.",
+	"episodes": 173
+}, {
+	"name": "Beverly Crusher",
+	"rank": "Commander",
+	"species": "Human",
+	"description": "The chief medical officer of the USS Enterprise-D who is compassionate and dedicated to her patients.",
+	"episodes": 154
+}, {
+	"name": "Wesley Crusher",
+	"rank": "Ensign",
+	"species": "Human",
+	"description": "The son of Beverly Crusher who joins Starfleet and serves aboard the USS Enterprise-D.",
+	"episodes": 85
+}, {
+	"name": "Tasha Yar",
+	"rank": "Lieutenant",
+	"species": "Human",
+	"description": "A security officer on the USS Enterprise-D who has a tough exterior but a troubled past.",
+	"episodes": 29
+}, {
+	"name": "Q",
+	"rank": "N/A",
+	"species": "Q",
+	"description": "An omnipotent being who appears on the USS Enterprise-D to test humanity and cause mischief.",
+	"episodes": 8
+}, {
+	"name": "Guinan",
+	"rank": "N/A",
+	"species": "El-Aurian",
+	"description": "The bartender on the USS Enterprise-D who has a mysterious past and possesses wisdom beyond her years.",
+	"episodes": 28
+}, {
+	"name": "Reginald Barclay",
+	"rank": "Lieutenant",
+	"species": "Human",
+	"description": "A nervous and socially awkward lieutenant in the Starfleet Engineering Corps who has an addiction to the holodeck.",
+	"episodes": 6
+}]}
