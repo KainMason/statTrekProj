@@ -1,1 +1,66 @@
-[{"name": "Antedean", "description": "The Antedean are a species of amphibious beings known for their cunning and deception."}, {"name": "Augments", "description": "The Augments are a group of genetically engineered humans created through genetic modification."}, {"name": "Bajorans", "description": "The Bajorans are a humanoid species native to the planet Bajor, known for their strong spiritual beliefs and religious practices."}, {"name": "Bolians", "description": "The Bolians are a humanoid species with a distinctive blue complexion and a cranial ridge."}, {"name": "Borg", "description": "The Borg are a cyborg species that seeks to assimilate all other species into their collective."}, {"name": "Cardassians", "description": "The Cardassians are a humanoid species characterized by their ridged foreheads and secretive, militaristic society."}, {"name": "Denobulans", "description": "The Denobulans are a humanoid species known for their diplomacy and medical expertise."}, {"name": "Ferengi", "description": "The Ferengi are a humanoid species known for their greed and mercantile interests."}, {"name": "Gorn", "description": "The Gorn are a reptilian species known for their physical strength and warrior culture."}, {"name": "Humans", "description": "Humans are a humanoid species from Earth, known for their diverse cultures and technological advancements."}, {"name": "Klingons", "description": "The Klingons are a warrior species known for their distinctive cranial ridges and honorable combat traditions."}, {"name": "Romulans", "description": "The Romulans are a humanoid species with pointed ears and a secretive, militant society."}, {"name": "Tellarites", "description": "The Tellarites are a porcine species known for their blunt personalities and negotiation skills."}, {"name": "Vulcans", "description": "The Vulcans are a humanoid species known for their logical minds and controlled emotions."}, {"name": "Xindi", "description": "The Xindi are a group of different species that banded together in a common goal."}, {"name": "Yridians", "description": "The Yridians are a species of humanoids known for their involvement in organized crime and greed."}]
+[
+    {
+        "name": "Antedean",
+        "description": "The Antedean are a species of amphibious beings known for their cunning and deception."
+    },
+    {
+        "name": "Augments",
+        "description": "The Augments are a group of genetically engineered humans created through genetic modification."
+    },
+    {
+        "name": "Bajorans",
+        "description": "The Bajorans are a humanoid species native to the planet Bajor, known for their strong spiritual beliefs and religious practices."
+    },
+    {
+        "name": "Bolians",
+        "description": "The Bolians are a humanoid species with a distinctive blue complexion and a cranial ridge."
+    },
+    {
+        "name": "Borg",
+        "description": "The Borg are a cyborg species that seeks to assimilate all other species into their collective."
+    },
+    {
+        "name": "Cardassians",
+        "description": "The Cardassians are a humanoid species characterized by their ridged foreheads and secretive, militaristic society."
+    },
+    {
+        "name": "Denobulans",
+        "description": "The Denobulans are a humanoid species known for their diplomacy and medical expertise."
+    },
+    {
+        "name": "Ferengi",
+        "description": "The Ferengi are a humanoid species known for their greed and mercantile interests."
+    },
+    {
+        "name": "Gorn",
+        "description": "The Gorn are a reptilian species known for their physical strength and warrior culture."
+    },
+    {
+        "name": "Humans",
+        "description": "Humans are a humanoid species from Earth, known for their diverse cultures and technological advancements."
+    },
+    {
+        "name": "Klingons",
+        "description": "The Klingons are a warrior species known for their distinctive cranial ridges and honorable combat traditions."
+    },
+    {
+        "name": "Romulans",
+        "description": "The Romulans are a humanoid species with pointed ears and a secretive, militant society."
+    },
+    {
+        "name": "Tellarites",
+        "description": "The Tellarites are a porcine species known for their blunt personalities and negotiation skills."
+    },
+    {
+        "name": "Vulcans",
+        "description": "The Vulcans are a humanoid species known for their logical minds and controlled emotions."
+    },
+    {
+        "name": "Xindi",
+        "description": "The Xindi are a group of different species that banded together in a common goal."
+    },
+    {
+        "name": "Yridians",
+        "description": "The Yridians are a species of humanoids known for their involvement in organized crime and greed."
+    }
+]
