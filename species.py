@@ -1,78 +1,106 @@
+# Import necessary libraries
 import json
+from matplotlib import widgets
 import matplotlib.pyplot as plt
+import pandas as pd
 import tkinter as tk
 from tkinter import ttk
 from matplotlib.backends.backend_tkagg import FigureCanvasTkAgg
 
-# Read the JSON file
+# Load data from JSON files into DataFrames
+with open('species.json', 'r') as f:
+    species_data = pd.read_json(f)
+
 with open('stData.json', 'r') as f:
-    data = json.load(f)
+    st_data = pd.read_json(f)
 
-# Create a list of characters and their episodes
-characters = []
-episodes = []
-for character in data['characters']:
-    characters.append(character['name'])
-    episodes.append(character['episodes'])
+# Create a list of Star Trek species
+species_list = species_data['name'].tolist()
 
-# Create a Tkinter window
+# Create a list of Star Trek characters and their episodes
+characters = [char['name'] for char in st_data['characters']]
+episodes = [char['episodes'] for char in st_data['characters']]
+
+# Create the main application window
 root = tk.Tk()
-root.geometry('400x400')
-root.title('Star Trek Characters')
+root.title('Star Trek Info')
 
-# Set the default mode to light
-dark_mode = False
+# Create a notebook to hold the tabs
+notebook = ttk.Notebook(root)
+notebook.pack(fill=tk.BOTH, expand=1)
 
-# Function to toggle the mode
-def toggle_mode():
-    global dark_mode
-    dark_mode = not dark_mode
-    if dark_mode:
-        root.config(background='#1F1F1F')
-        button.config(text='Light Mode', background='#E0E0E0', foreground='#1F1F1F')
-        ax.set_facecolor('#1F1F1F')
-        fig.set_facecolor('#1F1F1F')
-        plt.rcParams['text.color'] = 'w'
-        plt.rcParams['axes.labelcolor'] = 'w'
-        plt.rcParams['xtick.color'] = 'w'
-        plt.rcParams['ytick.color'] = 'w'
-    else:
-        root.config(background='#E0E0E0')
-        button.config(text='Dark Mode', background='#1F1F1F', foreground='#E0E0E0')
-        ax.set_facecolor('#E0E0E0')
-        fig.set_facecolor('#E0E0E0')
-        plt.rcParams['text.color'] = 'k'
-        plt.rcParams['axes.labelcolor'] = 'k'
-        plt.rcParams['xtick.color'] = 'k'
-        plt.rcParams['ytick.color'] = 'k'
-    fig.canvas.draw()
+# Create the Home tab
+home_tab = ttk.Frame(notebook)
+notebook.add(home_tab, text='Home')
 
-# Create a figure and axis
-fig, ax = plt.subplots()
+# Add a welcome message and instructions to the Home tab
+home_label = ttk.Label(home_tab, text='Welcome to the Star Trek Info app!')
+home_label.pack(padx=20, pady=20)
+
+home_text = ttk.Label(home_tab, text='Use the tabs to explore information about various Star Trek species and characters.')
+home_text.pack(padx=20, pady=20)
+home_text = ttk.Label(home_tab, text='Please note that the information presented on this website was collected through unofficial channels \n and may not be entirely accurate or up-to-date. \n We have made every effort to ensure the information is as reliable as possible, but we encourage users to verify it with other sources and to use their own judgment when making decisions based on this information.')
+home_text.pack(padx=20, pady=20)
+# Create the Species tab
+species_tab = ttk.Frame(notebook)
+notebook.add(species_tab, text='Species')
+
+# Add a combobox to select a species
+species_label = ttk.Label(species_tab, text='Select a species:')
+species_label.grid(row=0, column=0)
+
+species_combo = ttk.Combobox(species_tab, values=species_list)
+species_combo.grid(row=0, column=1)
+
+# Add a textbox to display the species description
+species_textbox = tk.Text(species_tab, height=10, width=50)
+species_textbox.grid(row=1)
+
+# Define a function to display the selected species' description
+def show_species_info(event):
+    name = species_combo.get()
+    description = species_data.loc[species_data['name'] == name, 'description'].item()
+    species_textbox.delete('1.0', tk.END)
+    species_textbox.insert(tk.END, description)
+
+# Bind the function to the species combobox selection
+species_combo.bind('<<ComboboxSelected>>', show_species_info)
+
+# Create the Characters tab
+st_tab = ttk.Frame(notebook)
+notebook.add(st_tab, text='Characters')
 
 # Create a horizontal bar plot of the number of episodes per character
+fig, ax = plt.subplots()
 ax.barh(characters, episodes, color='blue')
-
-# Add the number of episodes to each bar
 for i, v in enumerate(episodes):
-    ax.text(v + 3, i, str(v), color='black', fontweight='bold')
-
-# Add labels and title
+    ax.text(v + 3, i, str(v), color='white', fontweight='bold')
 ax.set_xlabel('Number of Episodes')
 ax.set_ylabel('Character')
 ax.set_title('Star Trek Characters by Number of Episodes')
-
-# Adjust the spacing between the bars
 plt.subplots_adjust(left=0.3)
 
-# Embed the plot in the Tkinter window
-canvas = FigureCanvasTkAgg(fig, master=root)
+# Define a function to show a message box with the selected character's number of episodes
+def on_select(event):
+    bar = event.artist
+    index = bar.get_y().tolist().index(event.mouseevent.ydata)
+    name = characters[index]
+    num_episodes = episodes[index]
+    message = f'{name} appears in {num_episodes} episodes.'
+    tk.messagebox
+# Bind a Matplotlib widget to allow for interactive selection of characters
+widgets.RectangleSelector(ax, on_select)
+
+# Create a canvas to display the Characters tab
+canvas = FigureCanvasTkAgg(fig, master=st_tab)
 canvas.draw()
 canvas.get_tk_widget().pack(side=tk.TOP, fill=tk.BOTH, expand=1)
 
-# Create a toggle button for dark mode
-button = tk.Button(root, text='Dark Mode', command=toggle_mode, background='#1F1F1F', foreground='#E0E0E0')
-button.pack(pady=10)
+# Configure row and column weights for all tabs
+for i in range(notebook.index('end')):
+    tab = notebook.nametowidget(notebook.tabs()[i])
+    tab.grid_columnconfigure(0, weight=1)
+    tab.grid_rowconfigure(0, weight=1)
 
 # Start the Tkinter event loop
 root.mainloop()
