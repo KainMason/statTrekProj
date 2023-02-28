@@ -47,14 +47,14 @@ notebook.add(species_tab, text='Species')
 
 # Add a combobox to select a species
 species_label = ttk.Label(species_tab, text='Select a species:')
-species_label.grid(row=0, column=0)
+species_label.pack()
 
 species_combo = ttk.Combobox(species_tab, values=species_list)
-species_combo.grid(row=0, column=1)
+species_combo.pack()
 
 # Add a textbox to display the species description
 species_textbox = tk.Text(species_tab, height=10, width=50)
-species_textbox.grid(row=1)
+species_textbox.pack()
 
 # Define a function to display the selected species' description
 def show_species_info(event):
